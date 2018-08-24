@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: apigateway-01
+  cloud:
+    consul:
+      discovery:
+        instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+      host: http://consul1
+      port: 8500
